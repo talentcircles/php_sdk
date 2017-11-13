@@ -1,0 +1,7 @@
+{
+    "name": "talentcircles/php_sdk",
+    "description": "A developer library for accessing TalentCircles network APIs",
+    "require": {
+        "php": "^5.3.3 || ^7.0"
+    }
+}
