@@ -1,6 +1,6 @@
 <?php
 
-require_once("../TalentCirclesSDK.php");
+require_once("../src/TalentCirclesSDK.php");
 
 $tc = new TalentCircles();
 

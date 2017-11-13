@@ -6,7 +6,7 @@
  * @copyright Copyright (c) 2017 TalentCircles Inc.
  */
 
-require_once("../TalentCirclesSDK.php");
+require_once("../src/TalentCirclesSDK.php");
 
 $tc = new TalentCircles();
 
@@ -15,17 +15,13 @@ $circle_ids = array(
         376
 );
 
-$str_circle_ids = implode(',', $circle_ids);
-
 $story_data = array(
     'title' => 'Multiple Circle Test Story',
     'story' => 'This test story is being posted to two different circles.',
-    'circle_id' => $str_circle_ids
+    'circle_id' => $circle_ids
 );
 
-$stories = $tc->postStory($story_data);
-
-$ar_stories = json_decode($stories)->stories;
+$ar_stories = $tc->postStory($story_data);
 ?>
 
 <html>

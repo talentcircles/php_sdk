@@ -1,7 +1,19 @@
 {
     "name": "talentcircles/php_sdk",
+    "type": "library",
     "description": "A developer library for accessing TalentCircles network APIs",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tom Clowers",
+            "email": "tom@talentcircles.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^5.3.3 || ^7.0"
+    },
+    "autoload": {
+        "psr-4": {"TalentCircles\\": "src/"}
     }
 }

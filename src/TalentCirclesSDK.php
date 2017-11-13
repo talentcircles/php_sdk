@@ -436,9 +436,17 @@ class TalentCircles {
     }
 
     public function postStory($story_data) {
+        if (is_array($story_data['circle_id'])) {
+            $story_data['circle_id'] = implode(',', $story_data['circle_id']);
+        }
         $valid_data = $this->validateStory($story_data);
         $result = $this->createResource(self::STORY_RESOURCE, $valid_data);
-        return $result->story;
+        if (isset($result->story) && $result->story) {
+            return $result->story;
+        } else if (isset($result->stories) && $result->stories) {
+            return $result->stories;
+        }
+        return null;
     }
 
     public function updateStory($story_id, $story_data) {

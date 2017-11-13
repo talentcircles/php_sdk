@@ -6,7 +6,7 @@
  * @copyright Copyright (c) 2017 TalentCircles Inc.
  */
 
-require_once("../TalentCirclesSDK.php");
+require_once("../src/TalentCirclesSDK.php");
 
 $tc = new TalentCircles();
 
