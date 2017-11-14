@@ -1,4 +1,5 @@
 <?php
+namespace TalentCircles;
 /**
  * TalentCirclesSDKConf.php
  * The Configuration file for the TalentCirclesSDK library. This should contain uri and
