@@ -1,4 +1,5 @@
 <?php
+namespace TalentCircles;
 /**
  * postStory.php
  *
@@ -8,7 +9,7 @@
 
 require_once("../src/TalentCirclesSDK.php");
 
-$tc = new TalentCircles();
+$tc = new TalentCirclesSDK();
 
 $circle_id = 375;
 

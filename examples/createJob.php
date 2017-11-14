@@ -1,4 +1,5 @@
 <?php
+namespace TalentCircles;
 /**
  * createJob.php
  *
@@ -8,7 +9,7 @@
 
 require_once("../src/TalentCirclesSDK.php");
 
-$tc = new TalentCircles();
+$tc = new TalentCirclesSDK();
 
 $jobTitle = "Advanced Front-end Developer";
 $jobDescription = "We need somone really good at developing";

@@ -20,7 +20,7 @@ library.
 ## Usage
 First initialize the SDK object:
 ```php
-$tc = new TalentCircles();
+$tc = new TalentCirclesSDK();
 ```
 Then call any of the functions below to access data on the TalentCircles network you are accessing. For example,
 to get a Job object, call `getJob()` with a job id:

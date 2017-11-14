@@ -1,4 +1,5 @@
 <?php
+namespace TalentCircles;
 /**
  * getSimilarUsers.php
  *
@@ -8,7 +9,7 @@
 
 require_once("../src/TalentCirclesSDK.php");
 
-$tc = new TalentCircles();
+$tc = new TalentCirclesSDK();
 
 $user_id = 12770260;
 $obj_user = $tc->getUser($user_id);

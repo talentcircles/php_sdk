@@ -1,4 +1,5 @@
 <?php
+namespace TalentCircles;
 /**
  * getJob.php
  *
@@ -8,7 +9,7 @@
 
 require_once("../src/TalentCirclesSDK.php");
 
-$tc = new TalentCircles();
+$tc = new TalentCirclesSDK();
 
 $obj_job = $tc->getJob(6579620);
 ?>

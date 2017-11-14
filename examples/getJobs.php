@@ -1,8 +1,15 @@
 <?php
+namespace TalentCircles;
+/**
+ * getJobs.php
+ *
+ * @author tom@talentcircles.com
+ * @copyright Copyright (c) 2017 TalentCircles Inc.
+ */
 
 require_once("../src/TalentCirclesSDK.php");
 
-$tc = new TalentCircles();
+$tc = new TalentCirclesSDK();
 
 $job_ids = array(
         4551686,

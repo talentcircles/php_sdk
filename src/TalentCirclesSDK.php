@@ -12,7 +12,7 @@ namespace TalentCircles;
 /* Require Configuration File */
 require_once('TalentCirclesSDKConf.php');
 
-class TalentCircles {
+class TalentCirclesSDK {
     const JOB_RESOURCE = "jobs";
     const USER_RESOURCE = "users";
     const CIRCLE_RESOURCE = "circles";
