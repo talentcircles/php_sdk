@@ -4,22 +4,18 @@ This library allows developers to integrate a TalentCircles network into their o
 network's REST API endpoints.
 
 ## Setup
-Edit the `src/TalentCirclesSDKConf.php` file and update the `NETWORK_URL`,`APP_ID`,and `API_KEY` fields to configure your
-library.
-```php
-    /** Set this value to the root url of your TalentCircles network */
-    const NETWORK_URL = 'https://127.0.1.1';
-
-    /** Set this value to the App ID of your TalentCircles network */
-    const APP_ID = 'romeo-5931c22e4190b';
-
-    /** Set this value to the API Key of your TalentCircles network */
-    const API_KEY = 'Y1IgDgriOjAo5hKMzZ0RxC';
+Setup is simple and easy with composer. See [instructions here](https://getcomposer.org/download/) if you do not have composer installed.
+Once you have composer, use the following command from your project root:
+```
+$ composer require talentcircles/php_sdk
 ```
 
 ## Usage
 First initialize the SDK object:
 ```php
+// Use your Network URL, App ID, and Api Key to connect to your API.
+// It is reccomended that this information be kept somewhere in your
+// project that is not accessible from the public html directory.
 $network_url='https://127.0.1.1';
 $app_id='romeo-5931c22e4190b';
 $api_key='Y1IgDgriOjAo5hKMzZ0RxC';
