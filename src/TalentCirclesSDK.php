@@ -10,7 +10,6 @@ namespace TalentCircles;
  */
 
 /* Require Configuration File */
-require_once('TalentCirclesSDKConf.php');
 
 class TalentCirclesSDK {
     const JOB_RESOURCE = "jobs";
@@ -26,9 +25,22 @@ class TalentCirclesSDK {
     const USERS_POSESSION = 'users';
     const JOBS_POSESSION = 'jobs';
 
+    private $network_url;
+    private $app_id;
+    private $api_key;
+
+    function __construct($network_url, $app_id, $api_key) {
+        if(!isset($network_url) || !isset($app_id) || !isset($api_key)) {
+            throw new Exception("Illegal parameters");
+        }
+        $this->network_url = $network_url;
+        $this->app_id = $app_id;
+        $this->api_key = $api_key;
+    }
+
     public function init($method = "GET", $resource, $resource_id = null, $posession = null, $posession_id = null, $additional_params = null) {
-        $app_id = TalentCirclesSDKConf::APP_ID;
-        $api_key = TalentCirclesSDKConf::API_KEY;;
+        $app_id = $this->app_id;
+        $api_key = $this->api_key;
         $curl = curl_init();
 
         $uri = "/api/v1/" . $resource;
@@ -50,7 +62,7 @@ class TalentCirclesSDK {
             }
         }
 
-        $url = TalentCirclesSDKConf::NETWORK_URL . $uri;
+        $url = $this->network_url . $uri;
 //        $url = "https://mytalentmall.talentcircles.vm" . $uri;
 
         curl_setopt_array($curl, array(
@@ -77,8 +89,8 @@ class TalentCirclesSDK {
     }
 
     public function initSearch($resource, $search_params = null, $page = 1, $results_per_page = 10) {
-        $app_id = TalentCirclesSDKConf::APP_ID;
-        $api_key = TalentCirclesSDKConf::API_KEY;;
+        $app_id = $this->app_id;
+        $api_key = $this->api_key;
         $curl = curl_init();
 
         $search_string = 'page=' . $page . '&' . 'results_per_page=' . $results_per_page;
@@ -90,7 +102,7 @@ class TalentCirclesSDK {
 
         $uri = "/api/v1/" . $resource . "?" . $search_string;
 
-        $url = TalentCirclesSDKConf::NETWORK_URL . $uri;
+        $url = $this->network_url . $uri;
 
         curl_setopt_array($curl, array(
             CURLOPT_URL            => $url,

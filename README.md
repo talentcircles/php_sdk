@@ -20,7 +20,11 @@ library.
 ## Usage
 First initialize the SDK object:
 ```php
-$tc = new TalentCirclesSDK();
+$network_url='https://127.0.1.1';
+$app_id='romeo-5931c22e4190b';
+$api_key='Y1IgDgriOjAo5hKMzZ0RxC';
+
+$tc = new TalentCirclesSDK($network_url, $app_id, $api_key);
 ```
 Then call any of the functions below to access data on the TalentCircles network you are accessing. For example,
 to get a Job object, call `getJob()` with a job id:

@@ -9,7 +9,11 @@ namespace TalentCircles;
 
 require_once("../src/TalentCirclesSDK.php");
 
-$tc = new TalentCirclesSDK();
+$network_url='https://127.0.1.1';
+$app_id='romeo-5931c22e4190b';
+$api_key='Y1IgDgriOjAo5hKMzZ0RxC';
+
+$tc = new TalentCirclesSDK($network_url, $app_id, $api_key);
 
 $user_id = 12770260;
 $obj_user = $tc->getUser($user_id);
