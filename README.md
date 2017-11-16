@@ -280,12 +280,15 @@ $story_data = array(
 $obj_story = $tc->updateStory($story_id, $story_data);
 ```
 
-**updateStories(INT $story_ids, ARR $story_data)** - Update a set of existing Stories identified by an array of $story_ids,
+**updateStories(ARR $story_ids, ARR $story_data)** - Update a set of existing Stories identified by an array of $story_ids,
 returns an array of the updated Story objects
 ```php
-$story_id = 240;
+$story_ids = array(
+    240,
+    241
+);
 $story_data = array(
     'story' => 'The text of this story is being updated.',
 );
-$obj_story = $tc->updateStory($story_id, $story_data);
+$obj_story = $tc->updateStory($story_ids, $story_data);
 ```
